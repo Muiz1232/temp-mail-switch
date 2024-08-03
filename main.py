@@ -36,10 +36,10 @@ from helpers import get_domains, get_mail_data, get_mails, remove_html_tags
 from icons import Icons
 
 file = "temp-mail-bot.log"
-
 if os.path.exists(file):
     os.remove(file)
 
+# Logging setup
 logging.basicConfig(
     format="%(asctime)s | %(name)s [%(levelname)s] : %(message)s",
     level=logging.INFO,
@@ -48,6 +48,7 @@ logging.basicConfig(
 )
 logs = logging.getLogger("botzhub")
 
+# Configuration setup
 try:
     BOT_TOKEN = config("BOT_TOKEN")
     FSUB_COMMUNITY_ID = config("FSUB_COMMUNITY_ID")
